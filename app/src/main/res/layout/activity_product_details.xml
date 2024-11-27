@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pullToRefresh"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/spato_app_background_color"
+    tools:context=".activities.ProductDetailsActivity"
+    tools:ignore="SpeakableTextPresentCheck">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingStart="@dimen/_15sdp"
+        android:paddingTop="@dimen/_20sdp"
+        android:paddingEnd="@dimen/_15sdp">
+
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="@dimen/back_button_image_size"
+            android:layout_height="@dimen/back_button_image_size"
+            android:foreground="@drawable/transparent_ripple_effect"
+            android:src="@drawable/back_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="UnusedAttribute" />
+
+        <TextView
+            android:id="@+id/detailsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/details"
+            android:textColor="@color/white"
+            android:textSize="@dimen/spato_screen_top_text_size"
+            app:layout_constraintBottom_toBottomOf="@+id/backButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/backButton" />
+
+        <View
+            android:id="@+id/topView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/spato_app_background_color"
+            android:translationZ="90dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@id/scrollView"
+            app:layout_constraintEnd_toEndOf="@id/scrollView"
+            app:layout_constraintStart_toStartOf="@id/scrollView"
+            app:layout_constraintTop_toTopOf="@id/scrollView" />
+
+        <ImageView
+            android:id="@+id/noData"
+            android:layout_width="@dimen/_170sdp"
+            android:layout_height="@dimen/_170sdp"
+            android:src="@drawable/spato_no_data"
+            android:translationZ="90dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:fillViewport="true"
+            android:overScrollMode="never"
+            android:scrollbarThumbVertical="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/backButton">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/_40sdp"
+                android:visibility="gone">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/productImage"
+                    android:layout_width="@dimen/spato_logo_width"
+                    android:layout_height="@dimen/spato_logo_width"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:contentDescription="@string/app_name"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/productName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/poppins_medium"
+                    android:maxLines="2"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintEnd_toStartOf="@id/currency"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/productImage" />
+
+                <ImageView
+                    android:id="@+id/currency"
+                    android:layout_width="@dimen/_12sdp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:layout_marginEnd="@dimen/_3sdp"
+                    android:src="@drawable/currency"
+                    app:layout_constraintBottom_toBottomOf="@id/productPrice"
+                    app:layout_constraintEnd_toStartOf="@id/productPrice"
+                    app:layout_constraintTop_toTopOf="@id/productPrice" />
+
+                <TextView
+                    android:id="@+id/productPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="@color/spato_primary_color"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1"
+                    app:layout_constraintStart_toEndOf="@+id/productName"
+                    app:layout_constraintTop_toTopOf="@+id/productName" />
+
+                <LinearLayout
+                    android:id="@+id/llDescriptionSpecificationsPdfs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:orientation="vertical"
+                    android:visibility="visible"
+                    android:background="@drawable/my_orders_tab_background"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_max="@dimen/_160sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/productName">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/llDescription"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingTop="@dimen/_5sdp"
+                            android:background="@drawable/transparent_ripple_effect"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvDescription"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_medium"
+                                android:paddingTop="@dimen/_10sdp"
+                                android:paddingBottom="@dimen/_15sdp"
+                                android:text="@string/description"
+                                android:textColor="@color/half_white"
+                                android:textSize="@dimen/_10sdp"
+                                tools:ignore="TextSizeCheck" />
+
+                            <View
+                                android:id="@+id/descriptionView"
+                                android:layout_width="@dimen/_40sdp"
+                                android:layout_height="@dimen/_2sdp"
+                                android:background="@drawable/spato_button_background"
+                                android:visibility="visible" />
+
+                        </LinearLayout>
+
+<!--                        <View-->
+<!--                            android:id="@+id/firstView"-->
+<!--                            android:layout_width="@dimen/_1sdp"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:layout_marginTop="@dimen/_10sdp"-->
+<!--                            android:layout_marginBottom="@dimen/_15sdp"-->
+<!--                            android:background="@color/half_white" />-->
+
+                        <LinearLayout
+                            android:id="@+id/llSpecifications"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingTop="@dimen/_5sdp"
+                            android:background="@drawable/transparent_ripple_effect"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvSpecifications"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_medium"
+                                android:paddingTop="@dimen/_10sdp"
+                                android:paddingBottom="@dimen/_15sdp"
+                                android:text="@string/specifications"
+                                android:textColor="@color/half_white"
+                                android:textSize="@dimen/_10sdp"
+                                tools:ignore="TextSizeCheck" />
+
+                            <View
+                                android:id="@+id/specificationsView"
+                                android:layout_width="@dimen/_40sdp"
+                                android:layout_height="@dimen/_2sdp"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginEnd="@dimen/_10sdp"
+                                android:background="@drawable/spato_button_background"
+                                android:visibility="gone" />
+
+                        </LinearLayout>
+
+<!--                        <View-->
+<!--                            android:id="@+id/secondView"-->
+<!--                            android:layout_width="@dimen/_1sdp"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:layout_marginTop="@dimen/_10sdp"-->
+<!--                            android:layout_marginBottom="@dimen/_15sdp"-->
+<!--                            android:background="@color/half_white" />-->
+
+                        <LinearLayout
+                            android:id="@+id/llUserGuide"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingTop="@dimen/_5sdp"
+                            android:background="@drawable/transparent_ripple_effect"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvUserGuide"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_medium"
+                                android:paddingTop="@dimen/_10sdp"
+                                android:paddingBottom="@dimen/_15sdp"
+                                android:text="@string/user_guide"
+                                android:textColor="@color/half_white"
+                                android:textSize="@dimen/_10sdp"
+                                tools:ignore="TextSizeCheck" />
+
+                            <View
+                                android:id="@+id/userGuideView"
+                                android:layout_width="@dimen/_40sdp"
+                                android:layout_height="@dimen/_2sdp"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:layout_marginEnd="@dimen/_10sdp"
+                                android:background="@drawable/spato_button_background"
+                                android:visibility="gone" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llProductDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:background="@drawable/spato_custom_edittext_background"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_2sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHeight_max="@dimen/_160sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/llDescriptionSpecificationsPdfs">
+
+                    <androidx.core.widget.NestedScrollView
+                        android:id="@+id/nestedScrollView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="vertical"
+                        android:scrollbarSize="@dimen/_2sdp"
+                        android:scrollbarStyle="outsideInset"
+                        android:paddingTop="@dimen/_8sdp"
+                        android:paddingBottom="@dimen/_8sdp"
+                        android:paddingEnd="@dimen/_2sdp"
+                        android:paddingStart="@dimen/_8sdp"
+                        android:scrollbarThumbVertical="@color/half_white"
+                        android:overScrollMode="never">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/productDescription"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_medium"
+                                android:lineSpacingExtra="@dimen/_2sdp"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_9sdp" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/userGuideRecyclerView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:overScrollMode="never"
+                                android:visibility="gone" />
+
+                        </LinearLayout>
+
+                    </androidx.core.widget.NestedScrollView>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llProductRequest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:background="@drawable/spato_button_background"
+                    android:foreground="@drawable/colored_ripple_effect"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/llProductDescription"
+                    tools:ignore="UnusedAttribute">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/poppins_medium"
+                        android:text="@string/request_spare_part"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/spato_button_text_size" />
+
+                    <ImageView
+                        android:layout_width="@dimen/_14sdp"
+                        android:layout_height="@dimen/_14sdp"
+                        android:src="@drawable/right_back_black"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/spareParts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/spare_parts"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_16sdp"
+                    app:layout_constraintEnd_toEndOf="@id/llProductRequest"
+                    app:layout_constraintStart_toStartOf="@id/llProductRequest"
+                    app:layout_constraintTop_toBottomOf="@id/llProductRequest" />
+
+                <TextView
+                    android:id="@+id/sparePartsDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/products_related_to_this_item"
+                    android:textAlignment="center"
+                    android:textColor="@color/half_white"
+                    android:textSize="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/spareParts"
+                    tools:ignore="TextSizeCheck" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/sparePartsRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/sparePartsDescription" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_40sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/sparePartsRecyclerView">
+
+                    <LinearLayout
+                        android:id="@+id/llPlusMinus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/my_cart_add_subtract_quantity_background"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/subtractTv"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/poppins_medium"
+                            android:foreground="@drawable/transparent_ripple_effect"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:paddingTop="@dimen/_7sdp"
+                            android:paddingEnd="@dimen/_10sdp"
+                            android:paddingBottom="@dimen/_7sdp"
+                            android:text="-"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12ssp"
+                            tools:ignore="HardcodedText,NestedWeights,UnusedAttribute" />
+
+                        <TextView
+                            android:id="@+id/productQuantity"
+                            android:layout_width="@dimen/_35sdp"
+                            android:layout_height="wrap_content"
+                            android:background="@color/spato_primary_color"
+                            android:fontFamily="@font/poppins_medium"
+                            android:paddingStart="@dimen/_2sdp"
+                            android:paddingTop="@dimen/_7sdp"
+                            android:paddingEnd="@dimen/_2sdp"
+                            android:paddingBottom="@dimen/_7sdp"
+                            android:text="1"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12ssp"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:id="@+id/addTv"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/poppins_medium"
+                            android:foreground="@drawable/transparent_ripple_effect"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:paddingTop="@dimen/_7sdp"
+                            android:paddingEnd="@dimen/_10sdp"
+                            android:paddingBottom="@dimen/_7sdp"
+                            android:text="+"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12ssp"
+                            tools:ignore="HardcodedText,UnusedAttribute" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llAddToCart"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/my_cart_add_subtract_quantity_background"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:paddingTop="@dimen/_7sdp"
+                            android:paddingEnd="@dimen/_10sdp"
+                            android:paddingBottom="@dimen/_7sdp"
+                            android:text="@string/add_to_cart"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_12ssp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

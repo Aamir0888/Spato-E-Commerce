@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/spato_app_background_color"
+    android:fillViewport="true"
+    android:paddingStart="@dimen/_15sdp"
+    android:paddingEnd="@dimen/_15sdp"
+    tools:context=".activities.AddUpdateAddressActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="@dimen/back_button_image_size"
+            android:layout_height="@dimen/back_button_image_size"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:foreground="@drawable/transparent_ripple_effect"
+            android:src="@drawable/back_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="UnusedAttribute" />
+
+        <TextView
+            android:id="@+id/addressAddUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/add_new_address"
+            android:textColor="@color/white"
+            android:textSize="@dimen/spato_screen_top_text_size"
+            app:layout_constraintBottom_toBottomOf="@+id/backButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/backButton" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:translationZ="90dp"
+            android:visibility="invisible"
+            android:background="@color/spato_app_background_color"
+            app:layout_constraintTop_toTopOf="@id/countryRegion"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/countryRegion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/country_region"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/backButton" />
+
+        <LinearLayout
+            android:id="@+id/llCountry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/add_new_address_edittext_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/spato_edittext_padding_horizontal"
+            android:paddingTop="@dimen/add_new_address_edittext_padding_vertical"
+            android:paddingEnd="@dimen/spato_edittext_padding_horizontal"
+            android:paddingBottom="@dimen/add_new_address_edittext_padding_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/countryRegion">
+
+            <com.hbb20.CountryCodePicker
+                android:id="@+id/ccp"
+                style="@style/CountryCodePicker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                app:ccpDialog_cornerRadius="10dp"
+                app:ccp_showArrow="false"
+                app:ccp_textGravity="LEFT"
+                app:ccp_defaultNameCode="IN"
+                app:ccp_rememberLastSelection="true"
+                app:ccp_contentColor="@color/white2"
+                app:ccp_showFullName="true"
+                app:ccp_showNameCode="false"
+                app:ccp_showPhoneCode="false"
+                app:ccp_padding="1dp"
+                app:ccp_textSize="14sp" />
+
+            <ImageView
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:layout_marginStart="-22dp"
+                android:src="@drawable/arrow_bottom"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/firstName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/first_name"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llCountry" />
+
+        <LinearLayout
+            android:id="@+id/llFirstName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/add_new_address_edittext_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/spato_edittext_padding_horizontal"
+            android:paddingTop="@dimen/add_new_address_edittext_padding_vertical"
+            android:paddingEnd="@dimen/spato_edittext_padding_horizontal"
+            android:paddingBottom="@dimen/add_new_address_edittext_padding_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/firstName">
+
+            <EditText
+                android:id="@+id/etFirstName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/transparent"
+                android:fontFamily="@font/poppins_regular"
+                android:inputType="textPersonName"
+                android:textColor="@color/white2"
+                android:textColorHint="@color/white2"
+                android:textSize="@dimen/spato_edittext_size"
+                tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/lastName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/last_name"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llFirstName" />
+
+        <LinearLayout
+            android:id="@+id/llLastName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/add_new_address_edittext_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/spato_edittext_padding_horizontal"
+            android:paddingTop="@dimen/add_new_address_edittext_padding_vertical"
+            android:paddingEnd="@dimen/spato_edittext_padding_horizontal"
+            android:paddingBottom="@dimen/add_new_address_edittext_padding_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lastName">
+
+            <EditText
+                android:id="@+id/etLastName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/transparent"
+                android:fontFamily="@font/poppins_regular"
+                android:inputType="textPersonName"
+                android:textColor="@color/white2"
+                android:textColorHint="@color/white2"
+                android:textSize="@dimen/spato_edittext_size"
+                tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/mobileNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/mobile_number"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llLastName" />
+
+        <LinearLayout
+            android:id="@+id/llMobileNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/add_new_address_edittext_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/spato_edittext_padding_horizontal"
+            android:paddingTop="@dimen/add_new_address_edittext_padding_vertical"
+            android:paddingEnd="@dimen/spato_edittext_padding_horizontal"
+            android:paddingBottom="@dimen/add_new_address_edittext_padding_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mobileNumber">
+
+            <EditText
+                android:id="@+id/etMobileNumber"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/transparent"
+                android:fontFamily="@font/poppins_regular"
+                android:inputType="number"
+                android:textColor="@color/white2"
+                android:textColorHint="@color/white2"
+                android:textSize="@dimen/spato_edittext_size"
+                tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/pinCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/pincode"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llMobileNumber" />
+
+        <LinearLayout
+            android:id="@+id/llPinCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/add_new_address_edittext_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/spato_edittext_padding_horizontal"
+            android:paddingTop="@dimen/add_new_address_edittext_padding_vertical"
+            android:paddingEnd="@dimen/spato_edittext_padding_horizontal"
+            android:paddingBottom="@dimen/add_new_address_edittext_padding_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pinCode">
+
+            <EditText
+                android:id="@+id/etPinCode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/transparent"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="@string/_6_digits_0_9_pin_code"
+                android:inputType="number"
+                android:maxLength="6"
+                android:textColor="@color/white2"
+                android:textColorHint="@color/white2"
+                android:textSize="@dimen/spato_edittext_size"
+                tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/street"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/street"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llPinCode" />
+
+        <LinearLayout
+            android:id="@+id/llAreaStreetSector"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/add_new_address_edittext_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/spato_edittext_padding_horizontal"
+            android:paddingTop="@dimen/add_new_address_edittext_padding_vertical"
+            android:paddingEnd="@dimen/spato_edittext_padding_horizontal"
+            android:paddingBottom="@dimen/add_new_address_edittext_padding_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/street">
+
+            <EditText
+                android:id="@+id/etAreaStreetSector"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/transparent"
+                android:fontFamily="@font/poppins_regular"
+                android:inputType="text"
+                android:textColor="@color/white2"
+                android:textColorHint="@color/white2"
+                android:textSize="@dimen/spato_edittext_size"
+                tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/townCity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/town_city"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llAreaStreetSector" />
+
+        <LinearLayout
+            android:id="@+id/llTownCity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/add_new_address_edittext_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/spato_edittext_padding_horizontal"
+            android:paddingTop="@dimen/add_new_address_edittext_padding_vertical"
+            android:paddingEnd="@dimen/spato_edittext_padding_horizontal"
+            android:paddingBottom="@dimen/add_new_address_edittext_padding_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/townCity">
+
+            <EditText
+                android:id="@+id/etTownCity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/transparent"
+                android:fontFamily="@font/poppins_regular"
+                android:inputType="text"
+                android:textColor="@color/white2"
+                android:textColorHint="@color/white2"
+                android:textSize="@dimen/spato_edittext_size"
+                tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/state"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llTownCity" />
+
+        <LinearLayout
+            android:id="@+id/llState"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/add_new_address_edittext_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/spato_edittext_padding_horizontal"
+            android:paddingTop="@dimen/add_new_address_edittext_padding_vertical"
+            android:paddingEnd="@dimen/spato_edittext_padding_horizontal"
+            android:paddingBottom="@dimen/add_new_address_edittext_padding_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/state">
+
+            <TextView
+                android:id="@+id/tvState"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/transparent"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="@string/choose_a_state"
+                android:textColor="@color/white2"
+                android:textColorHint="@color/white2"
+                android:textSize="@dimen/spato_edittext_size"
+                tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
+
+            <ImageView
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:src="@drawable/arrow_bottom"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llSaveAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:background="@drawable/spato_button_background"
+            android:foreground="@drawable/colored_ripple_effect"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/llState"
+            tools:ignore="UnusedAttribute">
+
+            <TextView
+                android:id="@+id/saveUpdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/save_address"
+                android:textColor="@color/black"
+                android:textSize="@dimen/spato_button_text_size" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

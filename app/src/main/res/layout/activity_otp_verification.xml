@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/spato_app_background_color"
+    android:fillViewport="true"
+    android:overScrollMode="never"
+    android:scrollbarThumbVertical="@null"
+    tools:context=".activities.ForgotPasswordActivity"
+    tools:ignore="SpeakableTextPresentCheck">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/_15sdp"
+        android:paddingEnd="@dimen/_15sdp">
+
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="@dimen/back_button_image_size"
+            android:layout_height="@dimen/back_button_image_size"
+            android:src="@drawable/back_button"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:foreground="@drawable/transparent_ripple_effect"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/spatoLogo"
+            android:layout_width="@dimen/spato_logo_width"
+            android:layout_height="@dimen/spato_logo_width"
+            android:layout_marginTop="@dimen/spato_logo_margin_top"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/spato_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/forgotPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:text="@string/enter_code_sent_to_your_email"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_17sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/spatoLogo" />
+
+        <TextView
+            android:id="@+id/provideEmail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/we_sent_verification_code_to_your_email"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:textSize="@dimen/login_instruction_size"
+            android:layout_marginTop="@dimen/_5sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/forgotPassword"/>
+
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/spato_primary_color"
+            android:textAlignment="center"
+            android:textSize="@dimen/login_instruction_size"
+            android:layout_marginTop="@dimen/_2sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/provideEmail"/>
+
+        <com.chaos.view.PinView
+            android:id="@+id/pinView"
+            style="@style/PinWidget.PinView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:inputType="numberPassword"
+            app:itemRadius="10dp"
+            app:itemSpacing="@dimen/_10sdp"
+            android:itemBackground="@color/spato_secondary_color"
+            app:layout_constraintEnd_toEndOf="@id/email"
+            app:layout_constraintStart_toStartOf="@id/email"
+            app:layout_constraintTop_toBottomOf="@id/email"
+            app:lineWidth="1dp"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/resend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_30sdp"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:text="@string/resend"
+            android:textColor="@color/spato_primary_color"
+            android:textSize="@dimen/_11sdp"
+            android:background="@drawable/transparent_ripple_effect"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintTop_toBottomOf="@id/pinView"
+            app:layout_constraintStart_toStartOf="@id/pinView"
+            app:layout_constraintEnd_toEndOf="@id/pinView"
+            app:layout_constraintBottom_toTopOf="@id/llDone"
+            app:layout_constraintVertical_bias="1"
+            tools:ignore="TextSizeCheck" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="@dimen/spato_view_width"
+            android:background="@color/spato_primary_color"
+            app:layout_constraintStart_toStartOf="@id/resend"
+            app:layout_constraintEnd_toEndOf="@id/resend"
+            app:layout_constraintTop_toBottomOf="@id/resend"/>
+
+        <LinearLayout
+            android:id="@+id/llDone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/spato_button_margin_bottom"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:background="@drawable/spato_button_background"
+            android:foreground="@drawable/colored_ripple_effect"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/_10sdp"
+            app:layout_constraintTop_toBottomOf="@id/resend"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/done"
+                android:textColor="@color/white"
+                android:textSize="@dimen/spato_button_text_size" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

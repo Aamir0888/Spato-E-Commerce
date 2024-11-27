@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/_1sdp"
+    android:paddingEnd="@dimen/_4sdp"
+    android:background="@color/transparent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/llSingleItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:background="@drawable/notifications_recycler_single_item_background"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/_13sdp"
+        android:paddingTop="@dimen/_15sdp"
+        android:paddingEnd="@dimen/_13sdp"
+        android:paddingBottom="@dimen/_15sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/productPic"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/profile_pic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/llArticle"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="@dimen/_10sdp"-->
+<!--            android:background="@drawable/article_no_background"-->
+<!--            android:gravity="center"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:paddingStart="@dimen/_7sdp"-->
+<!--            android:paddingTop="@dimen/_3sdp"-->
+<!--            android:paddingEnd="@dimen/_7sdp"-->
+<!--            android:paddingBottom="@dimen/_3sdp"-->
+<!--            app:layout_constraintEnd_toEndOf="@id/productPic"-->
+<!--            app:layout_constraintStart_toStartOf="@id/productPic"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/productPic">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tvArticleNo"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:fontFamily="@font/poppins_regular"-->
+<!--                android:text="Article No. : 80-2195118037"-->
+<!--                android:textColor="@color/spato_primary_color"-->
+<!--                android:textSize="@dimen/_3sdp" />-->
+
+<!--        </LinearLayout>-->
+
+        <TextView
+            android:id="@+id/productName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:ellipsize="end"
+            android:fontFamily="@font/poppins_medium"
+            android:maxLines="2"
+            android:text="Absorber connector with two stainless..."
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toStartOf="@id/rightArrowImage"
+            app:layout_constraintStart_toEndOf="@id/productPic"
+            app:layout_constraintTop_toTopOf="@id/productPic"
+            tools:ignore="TextSizeCheck" />
+
+        <ImageView
+            android:id="@+id/currency"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:src="@drawable/currency"
+            app:layout_constraintStart_toStartOf="@id/productName"
+            app:layout_constraintTop_toBottomOf="@id/productName" />
+
+        <TextView
+            android:id="@+id/productPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="13.8$"
+            android:textColor="@color/spato_primary_color"
+            android:textSize="@dimen/_13sdp"
+            app:layout_constraintBottom_toBottomOf="@id/currency"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toEndOf="@id/currency"
+            app:layout_constraintTop_toTopOf="@id/currency"
+            tools:ignore="HardcodedText" />
+
+        <ImageView
+            android:id="@+id/rightArrowImage"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:src="@drawable/right_back"
+            app:layout_constraintBottom_toTopOf="@+id/view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="productPic, currency, rightArrowImage"/>
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="0.7dp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:background="@color/half_white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/barrier" />
+
+        <ImageView
+            android:id="@+id/dateTimeImage"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:src="@drawable/order_details_date_time"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view" />
+
+        <TextView
+            android:id="@+id/dateTimeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/view_start_margin"
+            android:fontFamily="@font/poppins_light"
+            android:text="@string/date_and_time"
+            android:textColor="@color/half_white"
+            android:textSize="@dimen/_8sdp"
+            app:layout_constraintBottom_toTopOf="@id/dateTime"
+            app:layout_constraintStart_toEndOf="@id/dateTimeImage"
+            app:layout_constraintTop_toTopOf="@id/dateTimeImage"
+            tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/dateTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:text="28, June 2023 08:22 AM"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_9sdp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintBottom_toBottomOf="@id/dateTimeImage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/dateTimeText"
+            app:layout_constraintTop_toBottomOf="@id/dateTimeText"
+            tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
+
+        <!--        <ImageView-->
+<!--            android:id="@+id/paymentMethodImage"-->
+<!--            android:layout_width="@dimen/_20sdp"-->
+<!--            android:layout_height="@dimen/_20sdp"-->
+<!--            android:src="@drawable/order_details_payment_method"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/dateTimeImage"-->
+<!--            app:layout_constraintTop_toTopOf="@id/dateTimeImage" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/paymentMethodText"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="@dimen/view_start_margin"-->
+<!--            android:fontFamily="@font/poppins_light"-->
+<!--            android:text="@string/payment_method"-->
+<!--            android:textColor="@color/half_white"-->
+<!--            android:textSize="@dimen/_7sdp"-->
+<!--            app:layout_constraintBottom_toTopOf="@id/paymentMethod"-->
+<!--            app:layout_constraintStart_toEndOf="@id/paymentMethodImage"-->
+<!--            app:layout_constraintTop_toTopOf="@id/paymentMethodImage"-->
+<!--            tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/paymentMethod"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:fontFamily="@font/poppins_regular"-->
+<!--            android:text="HDFC Credit Card"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textSize="@dimen/_8sdp"-->
+<!--            app:layout_constraintBottom_toBottomOf="@id/paymentMethodImage"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="@id/paymentMethodText"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/paymentMethodText"-->
+<!--            tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

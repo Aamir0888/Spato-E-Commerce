@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "886731304420",
+    "project_id": "spato-be2d8",
+    "storage_bucket": "spato-be2d8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:886731304420:android:4848e2889100c8a3fb2bf1",
+        "android_client_info": {
+          "package_name": "com.ibs.spato"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "886731304420-2a4e0famfudjc9mh1n751ihook5mikgp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDahiWuGSlhwaeQWF6FRIn51JAQtB-uKkQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "886731304420-2a4e0famfudjc9mh1n751ihook5mikgp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

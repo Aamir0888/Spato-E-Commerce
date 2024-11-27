@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/spato_app_background_color"
+    android:fillViewport="true"
+    android:overScrollMode="never"
+    android:scrollbarThumbVertical="@null"
+    tools:context=".activities.EditProfileActivity"
+    tools:ignore="SpeakableTextPresentCheck">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/_15sdp"
+        android:paddingTop="@dimen/_20sdp"
+        android:paddingEnd="@dimen/_15sdp">
+
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="@dimen/back_button_image_size"
+            android:layout_height="@dimen/back_button_image_size"
+            android:foreground="@drawable/transparent_ripple_effect"
+            android:src="@drawable/back_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="UnusedAttribute" />
+
+        <TextView
+            android:id="@+id/profileText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/profile"
+            android:textColor="@color/white"
+            android:textSize="@dimen/spato_screen_top_text_size"
+            app:layout_constraintBottom_toBottomOf="@+id/backButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/backButton" />
+
+<!--        <de.hdodenhof.circleimageview.CircleImageView-->
+<!--            android:id="@+id/editProfilePic"-->
+<!--            android:layout_width="@dimen/spato_logo_width"-->
+<!--            android:layout_height="@dimen/spato_logo_width"-->
+<!--            android:layout_marginTop="@dimen/_25sdp"-->
+<!--            android:contentDescription="@string/app_name"-->
+<!--            android:src="@drawable/profile_pic"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/profileText" />-->
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/editProfilePic"
+            android:layout_width="@dimen/spato_logo_width"
+            android:layout_height="@dimen/spato_logo_width"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/edit_profile_2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/profileText" />
+
+        <ImageView
+            android:id="@+id/pic"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:src="@drawable/edit_profile_1"
+            app:layout_constraintBottom_toBottomOf="@id/editProfilePic"
+            app:layout_constraintEnd_toEndOf="@id/editProfilePic"
+            app:layout_constraintStart_toStartOf="@id/editProfilePic"
+            app:layout_constraintTop_toTopOf="@id/editProfilePic" />
+
+        <ImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/edit_profile_pen"
+            app:layout_constraintBottom_toBottomOf="@id/editProfilePic"
+            app:layout_constraintEnd_toEndOf="@id/editProfilePic"
+            app:layout_constraintTop_toTopOf="@id/editProfilePic"
+            app:layout_constraintVertical_bias="0.7" />
+
+        <LinearLayout
+            android:id="@+id/llFirstName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_35sdp"
+            android:background="@drawable/spato_custom_edittext_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/spato_edittext_padding_horizontal"
+            android:paddingTop="@dimen/spato_edittext_padding_vertical"
+            android:paddingEnd="@dimen/spato_edittext_padding_horizontal"
+            android:paddingBottom="@dimen/spato_edittext_padding_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editProfilePic">
+
+            <ImageView
+                android:layout_width="@dimen/_29sdp"
+                android:layout_height="@dimen/_29sdp"
+                android:src="@drawable/edit_profile_name" />
+
+            <EditText
+                android:id="@+id/etFirstName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/view_start_margin"
+                android:layout_weight="1"
+                android:background="@color/transparent"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="@string/enter_your_first_name"
+                android:inputType="textPersonName"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="@dimen/spato_edittext_size"
+                tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llLastName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/spato_custom_edittext_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/spato_edittext_padding_horizontal"
+            android:paddingTop="@dimen/spato_edittext_padding_vertical"
+            android:paddingEnd="@dimen/spato_edittext_padding_horizontal"
+            android:paddingBottom="@dimen/spato_edittext_padding_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/llFirstName">
+
+            <ImageView
+                android:layout_width="@dimen/_29sdp"
+                android:layout_height="@dimen/_29sdp"
+                android:src="@drawable/edit_profile_name" />
+
+            <EditText
+                android:id="@+id/etLastName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/view_start_margin"
+                android:layout_weight="1"
+                android:background="@color/transparent"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="@string/enter_your_last_name"
+                android:inputType="textPersonName"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="@dimen/spato_edittext_size"
+                tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/spato_custom_edittext_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/spato_edittext_padding_horizontal"
+            android:paddingTop="@dimen/spato_edittext_padding_vertical"
+            android:paddingEnd="@dimen/spato_edittext_padding_horizontal"
+            android:paddingBottom="@dimen/spato_edittext_padding_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/llLastName">
+
+            <ImageView
+                android:layout_width="@dimen/_29sdp"
+                android:layout_height="@dimen/_29sdp"
+                android:src="@drawable/edit_profile_email_address" />
+
+            <TextView
+                android:id="@+id/etEmail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/view_start_margin"
+                android:layout_weight="1"
+                android:background="@color/transparent"
+                android:fontFamily="@font/poppins_regular"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="@dimen/spato_edittext_size"
+                tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llMobileNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/spato_custom_edittext_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/spato_edittext_padding_horizontal"
+            android:paddingTop="@dimen/spato_edittext_padding_vertical"
+            android:paddingEnd="@dimen/spato_edittext_padding_horizontal"
+            android:paddingBottom="@dimen/spato_edittext_padding_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/llEmail">
+
+            <ImageView
+                android:layout_width="@dimen/_29sdp"
+                android:layout_height="@dimen/_29sdp"
+                android:src="@drawable/edit_profile_mobile_number" />
+
+            <EditText
+                android:id="@+id/etMobileNumber"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/view_start_margin"
+                android:layout_weight="1"
+                android:background="@color/transparent"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="@string/enter_your_mobile_number"
+                android:inputType="number"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="@dimen/spato_edittext_size"
+                tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/spato_custom_edittext_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/spato_edittext_padding_horizontal"
+            android:paddingTop="@dimen/spato_edittext_padding_vertical"
+            android:paddingEnd="@dimen/spato_edittext_padding_horizontal"
+            android:paddingBottom="@dimen/spato_edittext_padding_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/llMobileNumber">
+
+            <ImageView
+                android:layout_width="@dimen/_29sdp"
+                android:layout_height="@dimen/_29sdp"
+                android:src="@drawable/edit_profile_password" />
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/view_start_margin"
+                android:layout_weight="1"
+                android:background="@color/transparent"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="@string/enter_your_password"
+                android:inputType="textPassword"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="@dimen/spato_edittext_size"
+                tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
+
+            <ImageView
+                android:id="@+id/passwordHideUnhide"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:padding="@dimen/_3sdp"
+                android:src="@drawable/password_hide" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llConfirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/spato_custom_edittext_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/spato_edittext_padding_horizontal"
+            android:paddingTop="@dimen/spato_edittext_padding_vertical"
+            android:paddingEnd="@dimen/spato_edittext_padding_horizontal"
+            android:paddingBottom="@dimen/spato_edittext_padding_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/llPassword">
+
+            <ImageView
+                android:layout_width="@dimen/_29sdp"
+                android:layout_height="@dimen/_29sdp"
+                android:src="@drawable/edit_profile_password" />
+
+            <EditText
+                android:id="@+id/etConfirmPassword"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/view_start_margin"
+                android:layout_weight="1"
+                android:background="@color/transparent"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="@string/confirm_your_password"
+                android:inputType="textPassword"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="@dimen/spato_edittext_size"
+                tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
+
+            <ImageView
+                android:id="@+id/confirmPasswordHideUnhide"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:padding="@dimen/_3sdp"
+                android:src="@drawable/password_hide" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llUpdateProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:layout_marginBottom="@dimen/spato_button_margin_bottom"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:background="@drawable/spato_button_background"
+            android:foreground="@drawable/colored_ripple_effect"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/llConfirmPassword"
+            tools:ignore="UnusedAttribute">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/update_profile"
+                android:textColor="@color/white"
+                android:textSize="@dimen/spato_button_text_size" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

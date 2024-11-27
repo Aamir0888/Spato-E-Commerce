@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/spato_app_background_color"
+    android:paddingStart="@dimen/_15sdp"
+    android:paddingTop="@dimen/_20sdp"
+    android:paddingEnd="@dimen/_15sdp"
+    tools:context=".activities.SettingsActivity">
+
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="@dimen/back_button_image_size"
+        android:layout_height="@dimen/back_button_image_size"
+        android:foreground="@drawable/transparent_ripple_effect"
+        android:src="@drawable/back_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UnusedAttribute" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
+        android:text="@string/settings"
+        android:textColor="@color/white"
+        android:textSize="@dimen/spato_screen_top_text_size"
+        app:layout_constraintBottom_toBottomOf="@+id/backButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/backButton" />
+
+    <LinearLayout
+        android:id="@+id/llNotifications"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_35sdp"
+        android:background="@drawable/spato_custom_edittext_background"
+        android:foreground="@drawable/transparent_ripple_effect"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/spato_edittext_padding_horizontal"
+        android:paddingTop="@dimen/spato_edittext_padding_vertical"
+        android:paddingEnd="@dimen/spato_edittext_padding_horizontal"
+        android:paddingBottom="@dimen/spato_edittext_padding_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/backButton"
+        tools:ignore="UnusedAttribute">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/notifications"
+            android:textColor="@color/white"
+            android:textSize="@dimen/spato_edittext_size"
+            tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
+
+        <ImageView
+            android:id="@+id/onOffButton"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:padding="@dimen/_3sdp"
+            android:src="@drawable/on_notification" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:background="@drawable/spato_custom_edittext_background"
+        android:foreground="@drawable/transparent_ripple_effect"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/spato_edittext_padding_horizontal"
+        android:paddingTop="@dimen/spato_edittext_padding_vertical"
+        android:paddingEnd="@dimen/spato_edittext_padding_horizontal"
+        android:paddingBottom="@dimen/spato_edittext_padding_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/llNotifications"
+        tools:ignore="UnusedAttribute">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/language"
+            android:textColor="@color/white"
+            android:textSize="@dimen/spato_edittext_size"
+            tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/german"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/german"
+            android:textColor="@color/white2"
+            android:textSize="@dimen/_10ssp"/>
+
+        <LinearLayout
+            android:id="@+id/llSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/language_switch_background"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toStartOf="@+id/english"
+            app:layout_constraintStart_toEndOf="@+id/german"
+            app:layout_constraintTop_toBottomOf="@id/spatoLogo">
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/langSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_5sdp"
+                android:background="@drawable/language_switch_background"
+                android:rotation="180"
+                app:thumbTint="@color/spato_primary_color"
+                app:trackTint="@color/transparent"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/english"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/english"
+            android:textColor="@color/white2"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/llSwitch"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/llSwitch"
+            app:layout_constraintTop_toTopOf="@id/llSwitch" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

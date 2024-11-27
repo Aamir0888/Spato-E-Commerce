@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/spato_app_background_color">
+
+    <LinearLayout
+        android:id="@+id/llSingleItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/my_addresses_single_item_background"
+        android:foreground="@drawable/transparent_ripple_effect"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:paddingTop="@dimen/_20sdp"
+        android:paddingBottom="@dimen/_20sdp"
+        android:paddingStart="@dimen/_20sdp"
+        android:paddingEnd="@dimen/_12sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="UnusedAttribute">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="top">
+
+            <TextView
+                android:id="@+id/customerName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Mr. X"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sdp"
+                tools:ignore="TextSizeCheck" />
+
+            <ImageView
+                android:id="@+id/edit"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_22sdp"
+                android:padding="@dimen/_4sdp"
+                android:src="@drawable/edit_pen"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_light"
+            android:text="Sweetball Business Center, A-74 Sector 63"
+            android:textColor="@color/white2"
+            android:textSize="@dimen/_11sdp"
+            tools:ignore="TextSizeCheck" />
+
+        <TextView
+            android:id="@+id/cityStatePin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_light"
+            android:text="Noida, Uttar Pradesh, 221301"
+            android:textColor="@color/white2"
+            android:textSize="@dimen/_11sdp"
+            tools:ignore="TextSizeCheck" />
+
+        <TextView
+            android:id="@+id/country"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_light"
+            android:text="India"
+            android:textColor="@color/white2"
+            android:textSize="@dimen/_11sdp"
+            tools:ignore="TextSizeCheck" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/phone_number"
+                android:fontFamily="@font/poppins_light"
+                android:textColor="@color/white2"
+                android:textSize="@dimen/_11sdp"
+                tools:ignore="TextSizeCheck"/>
+
+            <TextView
+                android:id="@+id/contactNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="9098786754"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:fontFamily="@font/poppins_light"
+                android:textColor="@color/white2"
+                android:textSize="@dimen/_11sdp"
+                tools:ignore="TextSizeCheck"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/pullToRefresh"
+    android:background="@color/spato_app_background_color"
+    tools:context=".fragments.ProfileFragment"
+    tools:ignore="SpeakableTextPresentCheck">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        android:scrollbarThumbVertical="@null">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/_15sdp"
+            android:paddingBottom="@dimen/_20sdp"
+            android:paddingStart="@dimen/_17sdp"
+            android:paddingEnd="@dimen/_17sdp">
+
+            <View
+                android:id="@+id/topView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:translationZ="90dp"
+                android:visibility="visible"
+                android:background="@color/spato_app_background_color"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+            <ImageView
+                android:id="@+id/noData"
+                android:layout_width="@dimen/_170sdp"
+                android:layout_height="@dimen/_170sdp"
+                android:src="@drawable/spato_no_data"
+                android:translationZ="90dp"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profilePic"
+                android:layout_width="@dimen/spato_logo_width"
+                android:layout_height="@dimen/spato_logo_width"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/profile_pic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/userName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Rohit Singh"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15sdp"
+                tools:ignore="TextSizeCheck,TouchTargetSizeCheck"
+                app:layout_constraintStart_toStartOf="@id/profilePic"
+                app:layout_constraintEnd_toEndOf="@id/profilePic"
+                app:layout_constraintTop_toBottomOf="@id/profilePic"/>
+
+            <TextView
+                android:id="@+id/userEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_light"
+                android:text="rohitsingh@gmail.com"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10sdp"
+                tools:ignore="TextSizeCheck,TouchTargetSizeCheck"
+                app:layout_constraintStart_toStartOf="@id/userName"
+                app:layout_constraintEnd_toEndOf="@id/userName"
+                app:layout_constraintTop_toBottomOf="@id/userName"/>
+
+            <LinearLayout
+                android:id="@+id/llBasicInformation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:background="@drawable/spato_custom_edittext_background"
+                android:foreground="@drawable/transparent_ripple_effect"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/spato_edittext_padding_horizontal"
+                android:paddingTop="@dimen/spato_edittext_padding_vertical"
+                android:paddingEnd="@dimen/spato_edittext_padding_horizontal"
+                android:paddingBottom="@dimen/spato_edittext_padding_vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/userEmail">
+
+                <ImageView
+                    android:layout_width="@dimen/_29sdp"
+                    android:layout_height="@dimen/_29sdp"
+                    android:src="@drawable/profile_basic_information" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/basic_information"
+                    android:textColor="@color/white"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/spato_edittext_size"
+                    tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
+
+                <ImageView
+                    android:layout_width="@dimen/_11sdp"
+                    android:layout_height="@dimen/_11sdp"
+                    android:src="@drawable/profile_right_arrow" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llPaymentSetting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@drawable/spato_custom_edittext_background"
+                android:foreground="@drawable/transparent_ripple_effect"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/spato_edittext_padding_horizontal"
+                android:paddingTop="@dimen/spato_edittext_padding_vertical"
+                android:paddingEnd="@dimen/spato_edittext_padding_horizontal"
+                android:paddingBottom="@dimen/spato_edittext_padding_vertical"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/llBasicInformation">
+
+                <ImageView
+                    android:layout_width="@dimen/_29sdp"
+                    android:layout_height="@dimen/_29sdp"
+                    android:src="@drawable/profile_payment_settings" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/payment_setting"
+                    android:textColor="@color/white"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/spato_edittext_size"
+                    tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
+
+                <ImageView
+                    android:layout_width="@dimen/_11sdp"
+                    android:layout_height="@dimen/_11sdp"
+                    android:src="@drawable/profile_right_arrow" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llMyAddresses"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/spato_button_margin_bottom"
+                android:background="@drawable/spato_custom_edittext_background"
+                android:foreground="@drawable/transparent_ripple_effect"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/spato_edittext_padding_horizontal"
+                android:paddingTop="@dimen/spato_edittext_padding_vertical"
+                android:paddingEnd="@dimen/spato_edittext_padding_horizontal"
+                android:paddingBottom="@dimen/spato_edittext_padding_vertical"
+                app:layout_constraintVertical_bias="0"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/llPaymentSetting">
+
+                <ImageView
+                    android:layout_width="@dimen/_29sdp"
+                    android:layout_height="@dimen/_29sdp"
+                    android:src="@drawable/profile_my_addresses" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/my_addresses"
+                    android:textColor="@color/white"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/spato_edittext_size"
+                    tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
+
+                <ImageView
+                    android:layout_width="@dimen/_11sdp"
+                    android:layout_height="@dimen/_11sdp"
+                    android:src="@drawable/profile_right_arrow" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/deleteAccount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_10sdp"
+                android:paddingStart="@dimen/_10sdp"
+                android:textAlignment="center"
+                android:fontFamily="@font/poppins_regular"
+                android:text="@string/delete_account"
+                android:textColor="@color/redColor2"
+                android:textSize="@dimen/_12ssp"
+                android:background="@drawable/transparent_ripple_effect"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/llMyAddresses" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

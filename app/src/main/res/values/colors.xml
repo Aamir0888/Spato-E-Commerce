@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="white2">#CCFFFFFF</color>
+    <color name="half_white">#99FFFFFF</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="ripple_effect_colored">#C5C5C5</color>
+    <color name="ripple_effect_transparent">#66C5C5C5</color>
+    <color name="spato_primary_color">#30D5C8</color>
+    <color name="spato_secondary_color">#212121</color>
+    <color name="spato_tertiary_color">#3D3D3D</color>
+    <color name="spato_app_background_color">#080B10</color>
+    <color name="disable_button_color">#CCE2E2E4</color>
+    <color name="aqua_color">#cbefeb</color>
+    <color name="sky_color">#ECF3F6</color>
+    <color name="sky_blue_color">#74B8ED</color>
+    <color name="redColor">#ff042e</color>
+    <color name="redColor2">#FF3838</color>
+    <color name="greenColor">#00A55E</color>
+    <!--    <color name="disable_button_color">#e2e2e4</color>-->
+</resources>

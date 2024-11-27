@@ -1,0 +1,111 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'com.google.gms.google-services'
+}
+
+android {
+    namespace 'com.ibs.spato'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.ibs.spato"
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+//        freeCompilerArgs = ['-Xjvm-default=enable']
+    }
+
+    buildFeatures{
+        viewBinding true
+    }
+}
+
+dependencies {
+
+//    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.core:core-ktx:1.10.1'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+//    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    //  firebase cloud messaging
+    implementation platform('com.google.firebase:firebase-bom:32.2.2')
+    implementation 'com.google.firebase:firebase-messaging-ktx:23.2.1'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+//    implementation 'com.google.firebase:firebase-crashlytics-ktx'
+
+    //noinspection GradleCompatible
+//    implementation 'com.android.support:support-v4:28.0.0'
+
+    //  retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    //  dagger
+    implementation 'com.google.dagger:dagger:2.44.2'
+    kapt 'com.google.dagger:dagger-compiler:2.44.2'
+
+    // coroutines
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
+
+    // ViewModel
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1'
+
+    // LiveData
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.1'
+
+    //  glide
+    implementation 'com.github.bumptech.glide:glide:4.14.2'
+
+    //  country code picker
+    implementation 'com.hbb20:ccp:2.5.0'
+
+    // for better reach to sp
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+
+    // for better reach to dp
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+
+    //  pin view
+    implementation 'io.github.chaosleung:pinview:1.4.4'
+
+    //  ImagePicker
+    implementation 'com.github.dhaval2404:imagepicker-support:1.7.1'
+
+    //  circular image
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    //  recycler view swipe
+    implementation 'com.github.xabaras:RecyclerViewSwipeDecorator:1.4'
+
+    //  pull down to refresh
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+
+    api 'com.theartofdev.edmodo:android-image-cropper:2.8.+'
+}

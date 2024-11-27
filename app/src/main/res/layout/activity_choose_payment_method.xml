@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/spato_app_background_color"
+    android:paddingStart="@dimen/_15sdp"
+    android:paddingTop="@dimen/_20sdp"
+    android:paddingEnd="@dimen/_15sdp"
+    tools:context=".activities.ChoosePaymentMethodActivity">
+
+    <include layout="@layout/checkout_successfully_layout"
+        android:id="@+id/checkoutSuccessful"/>
+
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="@dimen/back_button_image_size"
+        android:layout_height="@dimen/back_button_image_size"
+        android:foreground="@drawable/transparent_ripple_effect"
+        android:src="@drawable/back_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UnusedAttribute" />
+
+    <TextView
+        android:id="@+id/paymentMethodText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
+        android:text="@string/payment_method"
+        android:textColor="@color/white"
+        android:textSize="@dimen/spato_screen_top_text_size"
+        app:layout_constraintBottom_toBottomOf="@+id/backButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/backButton" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        android:scrollbarThumbVertical="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/backButton">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/mainLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:id="@+id/llBankTransfer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/spato_custom_edittext_background"
+                    android:foreground="@drawable/transparent_ripple_effect"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/spato_edittext_padding_horizontal"
+                    android:paddingTop="@dimen/spato_edittext_padding_vertical"
+                    android:paddingEnd="@dimen/spato_edittext_padding_horizontal"
+                    android:paddingBottom="@dimen/spato_edittext_padding_vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/userEmail"
+                    tools:ignore="UnusedAttribute">
+
+                    <ImageView
+                        android:layout_width="@dimen/_29sdp"
+                        android:layout_height="@dimen/_29sdp"
+                        android:src="@drawable/bank_transfer" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="@string/bank_transfer"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_13ssp"
+                        tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
+
+                    <ImageView
+                        android:id="@+id/bankArrow"
+                        android:layout_width="@dimen/_11sdp"
+                        android:layout_height="@dimen/_11sdp"
+                        android:rotation="90"
+                        android:src="@drawable/profile_right_arrow" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/bankTransferVisibleInvisible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/spato_custom_edittext_background"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_10sdp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/bank"
+                            android:textColor="@color/white2"
+                            android:textSize="@dimen/_11sdp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="@string/stadt_sparkasse_solingen"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_13ssp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/ifsc"
+                            android:textColor="@color/white2"
+                            android:textSize="@dimen/_11sdp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="@string/_34250000"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_13ssp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/iban"
+                            android:textColor="@color/white2"
+                            android:textSize="@dimen/_11sdp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="@string/de183425000000018942"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_13ssp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/bic"
+                            android:textColor="@color/white2"
+                            android:textSize="@dimen/_11sdp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="@string/solsde33xxx"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_13ssp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llPayPal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:background="@drawable/spato_custom_edittext_background"
+                    android:foreground="@drawable/transparent_ripple_effect"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/spato_edittext_padding_horizontal"
+                    android:paddingTop="@dimen/spato_edittext_padding_vertical"
+                    android:paddingEnd="@dimen/spato_edittext_padding_horizontal"
+                    android:paddingBottom="@dimen/spato_edittext_padding_vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/llBasicInformation">
+
+                    <ImageView
+                        android:layout_width="@dimen/_29sdp"
+                        android:layout_height="@dimen/_29sdp"
+                        android:src="@drawable/paypal" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="@string/paypal"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_13ssp"
+                        tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
+
+                    <ImageView
+                        android:id="@+id/paypalArrow"
+                        android:layout_width="@dimen/_11sdp"
+                        android:layout_height="@dimen/_11sdp"
+                        android:rotation="90"
+                        android:src="@drawable/profile_right_arrow" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/paypalVisibleInvisible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/spato_custom_edittext_background"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_10sdp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="@string/paypal_id"
+                            android:textColor="@color/white2"
+                            android:textSize="@dimen/_11sdp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="@string/info_spato_de"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_13ssp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llCashOnDelivery"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/spato_button_margin_bottom"
+                    android:background="@drawable/spato_custom_edittext_background"
+                    android:foreground="@drawable/transparent_ripple_effect"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="@dimen/spato_edittext_padding_horizontal"
+                    android:paddingTop="@dimen/spato_edittext_padding_vertical"
+                    android:paddingEnd="@dimen/spato_edittext_padding_horizontal"
+                    android:paddingBottom="@dimen/spato_edittext_padding_vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/llPaymentSetting"
+                    app:layout_constraintVertical_bias="0"
+                    tools:ignore="UnusedAttribute">
+
+                    <ImageView
+                        android:layout_width="@dimen/_29sdp"
+                        android:layout_height="@dimen/_29sdp"
+                        android:src="@drawable/cash_on_delivery" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="@string/cash_on_delivery"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_13ssp"
+                        tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
+
+                    <ImageView
+                        android:layout_width="@dimen/_11sdp"
+                        android:layout_height="@dimen/_11sdp"
+                        android:src="@drawable/profile_right_arrow" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/totalTopView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:background="@drawable/my_cart_total_background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mainLinearLayout" />
+
+            <TextView
+                android:id="@+id/totalText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="@string/total"
+                android:textColor="@color/spato_primary_color"
+                android:textSize="@dimen/spato_screen_top_text_size"
+                app:layout_constraintStart_toStartOf="@id/totalTopView"
+                app:layout_constraintTop_toBottomOf="@+id/totalTopView" />
+
+            <ImageView
+                android:layout_width="@dimen/_14sdp"
+                android:layout_height="@dimen/_14sdp"
+                android:layout_marginEnd="@dimen/_4sdp"
+                android:src="@drawable/currency"
+                app:layout_constraintBottom_toBottomOf="@id/totalAmount"
+                app:layout_constraintEnd_toStartOf="@id/totalAmount"
+                app:layout_constraintTop_toTopOf="@id/totalAmount" />
+
+            <TextView
+                android:id="@+id/totalAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:fontFamily="@font/poppins_regular"
+                android:textColor="@color/spato_primary_color"
+                android:textSize="@dimen/spato_screen_top_text_size"
+                app:layout_constraintEnd_toEndOf="@id/totalTopView"
+                app:layout_constraintTop_toBottomOf="@+id/totalTopView" />
+
+            <View
+                android:id="@+id/totalBottomView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:background="@drawable/my_cart_total_background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/totalText" />
+
+            <LinearLayout
+                android:id="@+id/llCheckout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:layout_marginEnd="@dimen/_30sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:background="@drawable/spato_button_background"
+                android:foreground="@drawable/colored_ripple_effect"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/totalBottomView"
+                app:layout_constraintVertical_bias="1"
+                tools:ignore="UnusedAttribute">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/checkout"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/spato_button_text_size" />
+
+                <ImageView
+                    android:layout_width="@dimen/_14sdp"
+                    android:layout_height="@dimen/_14sdp"
+                    android:src="@drawable/right_back_black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/spato_app_background_color"
+    android:fillViewport="true"
+    android:overScrollMode="never"
+    android:scrollbarThumbVertical="@null"
+    tools:context=".activities.LoginActivity"
+    tools:ignore="SpeakableTextPresentCheck">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/_15sdp"
+        android:paddingEnd="@dimen/_15sdp">
+
+        <TextView
+            android:id="@+id/skip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/transparent_ripple_effect"
+            android:fontFamily="@font/poppins_regular"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingTop="@dimen/_3sdp"
+            android:paddingEnd="@dimen/_3sdp"
+            android:paddingBottom="@dimen/_3sdp"
+            android:text="@string/skip"
+            android:textColor="@color/spato_primary_color"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintBottom_toTopOf="@+id/spatoLogo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/spatoLogo"
+            tools:ignore="TextSizeCheck" />
+
+        <ImageView
+            android:id="@+id/spatoLogo"
+            android:layout_width="@dimen/spato_logo_width"
+            android:layout_height="@dimen/spato_logo_width"
+            android:layout_marginTop="@dimen/spato_logo_margin_top"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/spato_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/german"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_13sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/german"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/llSwitch"
+            app:layout_constraintEnd_toStartOf="@+id/llSwitch"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/llSwitch" />
+
+        <LinearLayout
+            android:id="@+id/llSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:background="@drawable/spato_switch_background"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/_5sdp"
+            android:paddingEnd="@dimen/_5sdp"
+            app:layout_constraintEnd_toStartOf="@+id/english"
+            app:layout_constraintStart_toEndOf="@+id/german"
+            app:layout_constraintTop_toBottomOf="@id/spatoLogo">
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/langSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_25sdp"
+                android:background="@drawable/spato_switch_background"
+                android:rotation="180"
+                app:thumbTint="@color/spato_primary_color"
+                app:trackTint="@color/transparent"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/english"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_13sdp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/english"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/llSwitch"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/llSwitch"
+            app:layout_constraintTop_toTopOf="@id/llSwitch" />
+
+        <TextView
+            android:id="@+id/loginTo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:layout_marginEnd="@dimen/_3sdp"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:text="@string/login_to"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_20sdp"
+            app:layout_constraintEnd_toStartOf="@id/spato"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llSwitch" />
+
+        <TextView
+            android:id="@+id/spato"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:text="@string/spato"
+            android:textColor="@color/spato_primary_color"
+            android:textSize="@dimen/_20sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/loginTo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/loginTo"
+            app:layout_constraintTop_toTopOf="@+id/loginTo" />
+
+        <TextView
+            android:id="@+id/provideEmailPassword"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/provide_your_email_and_password_to_continue"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/login_instruction_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/loginTo" />
+
+        <LinearLayout
+            android:id="@+id/llEMail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/spato_custom_edittext_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/spato_edittext_padding_horizontal"
+            android:paddingTop="@dimen/spato_edittext_padding_vertical"
+            android:paddingEnd="@dimen/spato_edittext_padding_horizontal"
+            android:paddingBottom="@dimen/spato_edittext_padding_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/provideEmailPassword">
+
+            <ImageView
+                android:layout_width="@dimen/spato_edittext_image_size"
+                android:layout_height="@dimen/spato_edittext_image_size"
+                android:src="@drawable/email" />
+
+            <View
+                android:layout_width="@dimen/spato_view_width"
+                android:layout_height="@dimen/spato_view_height"
+                android:layout_marginStart="@dimen/view_start_margin"
+                android:background="@color/white" />
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/view_start_margin"
+                android:layout_weight="1"
+                android:background="@color/transparent"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="@dimen/spato_edittext_size"
+                tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/spato_custom_edittext_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/spato_edittext_padding_horizontal"
+            android:paddingTop="@dimen/spato_edittext_padding_vertical"
+            android:paddingEnd="@dimen/spato_edittext_padding_horizontal"
+            android:paddingBottom="@dimen/spato_edittext_padding_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/llEMail">
+
+            <ImageView
+                android:layout_width="@dimen/spato_edittext_image_size"
+                android:layout_height="@dimen/spato_edittext_image_size"
+                android:src="@drawable/password" />
+
+            <View
+                android:layout_width="@dimen/spato_view_width"
+                android:layout_height="@dimen/spato_view_height"
+                android:layout_marginStart="@dimen/view_start_margin"
+                android:background="@color/white" />
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/view_start_margin"
+                android:layout_weight="1"
+                android:background="@color/transparent"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="@dimen/spato_edittext_size"
+                tools:ignore="TextSizeCheck,TouchTargetSizeCheck" />
+
+            <ImageView
+                android:id="@+id/passwordHideUnhide"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:padding="@dimen/_3sdp"
+                android:src="@drawable/password_hide" />
+
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:buttonTint="@color/spato_primary_color"
+            android:scaleX="0.75"
+            android:scaleY="0.75"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/llPassword"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/keepMeLoggedIn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/keep_me_logged_in"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_9ssp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@id/checkBox"
+            app:layout_constraintStart_toEndOf="@id/checkBox"
+            app:layout_constraintTop_toTopOf="@id/checkBox" />
+
+        <TextView
+            android:id="@+id/forgotPassword"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:background="@drawable/transparent_ripple_effect"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/forgot_password"
+            android:textAlignment="center"
+            android:textColor="@color/spato_primary_color"
+            android:textSize="@dimen/_9ssp"
+            app:layout_constraintBottom_toBottomOf="@id/checkBox"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/checkBox" />
+
+        <TextView
+            android:id="@+id/doNotHaveAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:layout_marginEnd="@dimen/_1sdp"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:text="@string/don_t_have_an_account"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_9sdp"
+            app:layout_constraintEnd_toStartOf="@id/register"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/forgotPassword"
+            tools:ignore="TextSizeCheck" />
+
+        <TextView
+            android:id="@+id/register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_1sdp"
+            android:layout_marginBottom="@dimen/_2sdp"
+            android:background="@drawable/transparent_ripple_effect"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:text="@string/register"
+            android:textColor="@color/spato_primary_color"
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/doNotHaveAccount"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/doNotHaveAccount"
+            app:layout_constraintTop_toTopOf="@+id/doNotHaveAccount"
+            tools:ignore="TextSizeCheck" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="@dimen/spato_view_width"
+            android:background="@color/spato_primary_color"
+            app:layout_constraintEnd_toEndOf="@id/register"
+            app:layout_constraintStart_toStartOf="@id/register"
+            app:layout_constraintTop_toBottomOf="@id/register" />
+
+        <LinearLayout
+            android:id="@+id/llLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/spato_button_margin_bottom"
+            android:background="@drawable/spato_button_background"
+            android:foreground="@drawable/colored_ripple_effect"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/doNotHaveAccount"
+            app:layout_constraintVertical_bias="1"
+            tools:ignore="UnusedAttribute">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="@string/login"
+                android:textColor="@color/white"
+                android:textSize="@dimen/spato_button_text_size" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

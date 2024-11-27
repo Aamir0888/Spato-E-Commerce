@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/singleItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:layout_marginTop="@dimen/_5sdp"
+    android:layout_marginBottom="@dimen/_5sdp"
+    android:foreground="@drawable/transparent_ripple_effect"
+    android:background="@drawable/user_guide_pdf_single_item_background"
+    android:padding="10dp"
+    tools:ignore="UnusedAttribute">
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="@dimen/_10ssp"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:textColor="@color/white"
+        tools:ignore="HardcodedText" />
+
+    <ImageView
+        android:id="@+id/downloadIcon"
+        android:layout_width="23dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/download"/>
+
+</LinearLayout>

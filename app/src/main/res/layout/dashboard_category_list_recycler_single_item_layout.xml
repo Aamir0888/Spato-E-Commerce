@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingEnd="@dimen/_4sdp"
+    android:paddingStart="@dimen/_4sdp"
+    android:paddingBottom="@dimen/_8sdp"
+    android:id="@+id/llSingleItem"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/llCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/_10sdp"
+        android:background="@drawable/notifications_recycler_single_item_background"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/categoryImage"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:clipToOutline="true"
+            android:background="@drawable/image_rounded_background"
+            android:src="@drawable/product_dummy"
+            tools:ignore="UnusedAttribute" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/categoryName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_8ssp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textAlignment="center"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:fontFamily="@font/poppins_regular"
+        app:layout_constraintStart_toStartOf="@id/llCategory"
+        app:layout_constraintEnd_toEndOf="@id/llCategory"
+        app:layout_constraintTop_toBottomOf="@id/llCategory" />
+
+    <LinearLayout
+        android:id="@+id/llCategoryMore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="@dimen/_10sdp"
+        android:visibility="gone"
+        android:background="@drawable/more_category_background"
+        app:layout_constraintTop_toTopOf="@id/llCategory"
+        app:layout_constraintStart_toEndOf="@id/llCategory">
+
+        <ImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:src="@drawable/more" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/moreText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/more"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_8ssp"
+        android:visibility="gone"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textAlignment="center"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:fontFamily="@font/poppins_regular"
+        app:layout_constraintStart_toStartOf="@id/llCategoryMore"
+        app:layout_constraintEnd_toEndOf="@id/llCategoryMore"
+        app:layout_constraintTop_toBottomOf="@id/llCategoryMore" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
